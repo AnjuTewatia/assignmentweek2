@@ -6,7 +6,7 @@ import Gallery from "./Components/Pages/Gallery";
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <Gallery />
     </div>
   );

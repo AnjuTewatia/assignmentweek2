@@ -1,38 +1,30 @@
+// Navbar.js
 import React, { useState } from "react";
-
 import "./Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
+const Navbar = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
+  const handleToggle = () => {
+    setIsMobile(!isMobile);
   };
 
   return (
-    <div className="App">
-      <nav className="navbar">
-        <ul className={`nav-links ${showMenu ? "show-menu" : ""}`}>
-          <li>
-            <a href="#home"> Home</a>
-          </li>
-          <li>
-            <a href="#gallery"> Gallery</a>
-          </li>
-          <li>
-            <a href="#contact"> Contact</a>
-          </li>
-          <li>
-            <a href="#about"> About</a>
-          </li>
-        </ul>
-        <div className="menu-icon" onClick={toggleMenu}>
-          {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
-          <p>abcd</p>
+    <nav className="navbar">
+      <div className={`menu ${isMobile ? "mobile" : ""}`}>
+        <div className="nav">
+          <p> Home </p>
+          <p>Gallery</p>
+          <p>About</p>
+          <p>Contact</p>
         </div>
-      </nav>
-    </div>
+      </div>
+      <button onClick={handleToggle} className="toggle-button">
+        ☰
+      </button>
+    </nav>
   );
-}
+};
 
 export default Navbar;
